@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 app.set("port", PORT); 
 
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(process.env.PORT || 8080, function(){
+    app.listen(process.env.PORT || 5000, function(){
         console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
       });
 });
